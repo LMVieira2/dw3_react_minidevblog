@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 var teste =8
 const Form = () => {
@@ -7,14 +7,7 @@ const Form = () => {
         console.log(e)
     }
 
-const renderButton = (x) => {
-    if(x) {
-        return <h1>Renderizou Bonitinho</h1>
-    }
-    else {
-        return <h1>Renderizou Lindinho</h1>
-    }
-}
+    const [x, setX] = useState(true)
   return (
   <> 
     <div>
@@ -32,8 +25,8 @@ const renderButton = (x) => {
             }}>Será que você clica aqui?</button>
         </div>
         <div>
-            {renderButton(true)}
-            {renderButton(false)}
+            <h1>{x ? 'Renderizou bonitinho!' : 'Deu ruim!'}</h1>
+            <button onClick={() => setX(!x)}>Clique aqui</button>
         </div>
     </div>
     <div>
